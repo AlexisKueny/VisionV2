@@ -5,6 +5,9 @@ import os
 from scipy.signal import find_peaks
 
 def display_image(title, image):
+    """
+    Display the image
+    """
     plt.figure(figsize=(8, 8))
     plt.title(title)
     plt.axis('off')
@@ -15,6 +18,7 @@ def display_image(title, image):
     plt.show()
 
 def extract_puzzle_pieces(image_path):
+    # 1) Pre-processing
     print("Reading image from path:", image_path)
     original_image = cv2.imread(image_path, cv2.IMREAD_COLOR)
     if original_image is None:
